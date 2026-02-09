@@ -173,4 +173,40 @@ a {
   .hero {
     height: 70vh;
   }
+  .post, .project {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.post-title, .project-title {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.post-content, .project-content {
+  line-height: 1.7;
+}
+
+.post-content h2,
+.project-content h2 {
+  margin-top: 2.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 3rem;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
 }
