@@ -174,9 +174,21 @@ a:hover {
   padding: 0 1.5rem;
 }
 
+/* Post and Project Card Boxes */
+.post-card,
+.project-card {
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .post-title, .project-title {
   font-size: 2.4rem;
   margin-bottom: 0.5rem;
+  margin-top: 0;
   line-height: 1.2;
 }
 
@@ -184,12 +196,19 @@ a:hover {
   font-size: 1.2rem;
   color: var(--muted);
   margin-bottom: 2rem;
+  margin-top: 0.5rem;
 }
 
 .post-meta {
   font-size: 0.9rem;
   color: var(--muted);
   margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .post-meta {
+  border-bottom-color: rgba(255,255,255,0.08);
 }
 
 .post-content, .project-content {
@@ -201,6 +220,14 @@ a:hover {
 .project-content h2 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.post-content h3,
+.project-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
 }
 
 .post-content p,
@@ -208,9 +235,52 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.post-content ul,
+.project-content ul,
+.post-content ol,
+.project-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.post-content li,
+.project-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.post-content code,
+.project-content code {
+  background: var(--bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .post-content code,
+[data-theme="dark"] .project-content code {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.post-content pre,
+.project-content pre {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .post-content pre,
+[data-theme="dark"] .project-content pre {
+  border-color: rgba(255,255,255,0.1);
+}
+
 .post-footer,
 .project-footer {
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(0,0,0,0.1);
   text-align: left;
@@ -436,5 +506,18 @@ a:hover {
 
   .post-title, .project-title {
     font-size: 1.8rem;
+  }
+
+  .post-card,
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .resume-box {
+    padding: 1.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
