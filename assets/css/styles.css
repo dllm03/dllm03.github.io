@@ -75,7 +75,7 @@ a {
 .hero {
   position: relative;
   height: 60vh;
-  background: url("assets/hero-bg.jpg") center/cover no-repeat;
+  background: url("/assets/images/hero-bg.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
