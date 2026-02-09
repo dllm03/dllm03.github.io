@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="project fade-in">
+  <header class="project-header">
+    <h1 class="project-title">{{ page.title }}</h1>
+
+    {% if page.description %}
+      <p class="project-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <section class="project-content">
+    {{ content }}
+  </section>
+
+  <footer class="project-footer">
+    <a href="/projects" class="back-link">← Back to Projects</a>
+  </footer>
+</article>
