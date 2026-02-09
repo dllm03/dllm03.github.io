@@ -243,6 +243,138 @@ a:hover {
 }
 
 /* =========================
+   ABOUT PAGE - RESUME BOX
+   ========================= */
+.resume-box {
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.resume-section {
+  margin-bottom: 2.5rem;
+}
+
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+
+.resume-section h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+.resume-section h4 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.resume-section p {
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.resume-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-section li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .resume-section li {
+  border-bottom-color: rgba(255,255,255,0.05);
+}
+
+.resume-section li:last-child {
+  border-bottom: none;
+}
+
+.resume-section li strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.skill-category {
+  background: var(--bg);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .skill-category {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.skill-category h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.skill-category p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Connect Links */
+.connect-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.connect-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: white !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connect-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  text-decoration: none;
+}
+
+.connect-link .icon {
+  font-size: 1.2rem;
+}
+
+/* =========================
    ANIMATIONS
    ========================= */
 .fade-in,
