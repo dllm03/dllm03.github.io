@@ -1,16 +1,18 @@
 ---
-layout: post
+layout: default
 title: Blog
 ---
 
 <section class="content">
-  <h1>Blog</h1>
+  <h2 class="section-title slide-up">Latest Articles</h2>
 
-  {% for post in site.posts %}
-  <article class="card">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.description }}</p>
-    <a href="{{ post.url }}">Read →</a>
-  </article>
-  {% endfor %}
+  <div class="card-grid">
+    {% for post in site.posts %}
+    <article class="card slide-up">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description }}</p>
+      <a href="{{ post.url }}">Read more →</a>
+    </article>
+    {% endfor %}
+  </div>
 </section>

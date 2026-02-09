@@ -1,3 +1,7 @@
 <footer class="footer">
-  © {{ site.time | date: "%Y" }} {{ site.author.name }}
+  © <span id="year">{{ site.time | date: "%Y" }}</span> {{ site.author.name }}
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
