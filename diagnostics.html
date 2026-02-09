@@ -1,0 +1,114 @@
+---
+layout: default
+title: Live Site Diagnostics
+---
+
+<section class="content">
+  <h1>Live Site Diagnostics</h1>
+  
+  <div style="background: #f0f9ff; border: 2px solid #0ea5e9; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+    <h2 style="margin-top: 0;">Instructions</h2>
+    <p>View the page source (Right-click → View Page Source) and check:</p>
+    <ol>
+      <li>Search for "post-card" - should be found in this page</li>
+      <li>Look for the CSS link - should be: <code>/assets/css/styles.css</code></li>
+      <li>Check if CSS file loads in Network tab (F12 → Network)</li>
+    </ol>
+  </div>
+
+  <h2>Test 1: Post Card Class</h2>
+  <article class="post-card slide-up visible">
+    <header class="post-header">
+      <h1 class="post-title">Test Post</h1>
+      <div class="post-meta">
+        <time>February 8, 2026</time>
+      </div>
+    </header>
+    <section class="post-content">
+      <p><strong>If you see this in a styled gray/card box with rounded corners, CSS is loading!</strong></p>
+      <p>Expected styling:</p>
+      <ul>
+        <li>Background color (gray/light or dark depending on theme)</li>
+        <li>Rounded corners (12px)</li>
+        <li>Shadow effect</li>
+        <li>Padding around content</li>
+      </ul>
+    </section>
+    <footer class="post-footer">
+      <a href="/blog" class="back-link">← This back link should be visible and blue</a>
+    </footer>
+  </article>
+
+  <hr style="margin: 3rem 0;">
+
+  <h2>Test 2: CSS Variables</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+    <div style="background: var(--card); padding: 1rem; border-radius: 8px;">
+      <strong>Card Color</strong>
+      <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">Should be light gray or dark gray</p>
+    </div>
+    <div style="background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--muted);">
+      <strong>Background Color</strong>
+      <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">Should be white or dark</p>
+    </div>
+    <div style="padding: 1rem;">
+      <strong style="color: var(--accent);">Accent Color</strong>
+      <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0; color: var(--muted);">Should be blue</p>
+    </div>
+  </div>
+
+  <h2>Test 3: Debug Info</h2>
+  <div style="background: #1f2937; color: #f9fafb; padding: 1.5rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+    <p><strong>CSS File Location:</strong> {{ "/assets/css/styles.css" | relative_url }}</p>
+    <p><strong>Base URL:</strong> {{ site.baseurl }}</p>
+    <p><strong>Site URL:</strong> {{ site.url }}</p>
+    <p><strong>Layout:</strong> {{ layout }}</p>
+    <p><strong>Page Layout:</strong> {{ page.layout }}</p>
+  </div>
+
+  <h2>Test 4: Check These in Browser</h2>
+  <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem; margin-top: 1rem;">
+    <p><strong>Open Browser DevTools (F12):</strong></p>
+    <ol>
+      <li><strong>Console tab:</strong> Look for any red errors</li>
+      <li><strong>Network tab:</strong> Filter by "CSS" - check if styles.css loads (should be green/200)</li>
+      <li><strong>Elements tab:</strong> Inspect the post-card element above, check "Computed" styles</li>
+    </ol>
+  </div>
+
+  <h2>Test 5: Inline Style Test</h2>
+  <div style="background: #f3f4f6; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+    <h3 style="margin-top: 0;">Inline Styled Card</h3>
+    <p>This card uses inline styles (not CSS classes). If you see THIS card styled but not the one above, then the CSS file isn't loading.</p>
+    <p style="background: #e0f2fe; padding: 1rem; border-radius: 4px; border-left: 4px solid #0ea5e9;">
+      <strong>Expected:</strong> Both cards should look similar
+    </p>
+  </div>
+
+</section>
+
+<script>
+  // Log diagnostic info to console
+  console.log('=== DIAGNOSTICS ===');
+  console.log('Post-card element exists:', !!document.querySelector('.post-card'));
+  console.log('Back-link element exists:', !!document.querySelector('.back-link'));
+  console.log('CSS computed styles:');
+  
+  const postCard = document.querySelector('.post-card');
+  if (postCard) {
+    const styles = window.getComputedStyle(postCard);
+    console.log('  background:', styles.backgroundColor);
+    console.log('  padding:', styles.padding);
+    console.log('  border-radius:', styles.borderRadius);
+  } else {
+    console.log('  ERROR: .post-card element not found!');
+  }
+  
+  // Check if CSS file loaded
+  const cssLink = document.querySelector('link[href*="styles.css"]');
+  if (cssLink) {
+    console.log('CSS link found:', cssLink.href);
+  } else {
+    console.log('ERROR: CSS link not found in <head>!');
+  }
+</script>
