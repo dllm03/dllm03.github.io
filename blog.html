@@ -1,0 +1,16 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="content">
+  <h1>Blog</h1>
+
+  {% for post in site.posts %}
+  <article class="card">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.description }}</p>
+    <a href="{{ post.url }}">Read →</a>
+  </article>
+  {% endfor %}
+</section>

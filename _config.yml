@@ -1,0 +1,27 @@
+title: Glaucio Miura
+description: Technology, Automation, SaaS, Data & Product Leadership
+url: https://dllm03.github.io
+baseurl: ""
+
+author:
+  name: Glaucio Miura
+  linkedin: https://linkedin.com/in/gmiura 
+  github: https://github.com/dllm03
+
+markdown: kramdown
+theme: null
+
+collections:
+  posts:
+    output: true
+  projects:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-seo-tag
