@@ -204,12 +204,28 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.post-footer,
+.project-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+[data-theme="dark"] .post-footer,
+[data-theme="dark"] .project-footer {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
 .back-link {
-  display: inline-block;
-  margin-top: 3rem;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   color: var(--accent);
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
 }
 
 .back-link:hover {
