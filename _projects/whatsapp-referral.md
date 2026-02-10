@@ -1,7 +1,7 @@
 ---
 layout: project
 title: WhatsApp Referral
-description: Mobile App to Identify all referrals
+description: Mobile App that parses WhatsApp chat messages to extract service referrals 
 ---
 
 ## Tech Stack
