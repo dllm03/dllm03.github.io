@@ -402,20 +402,24 @@ a:hover {
   border-radius: 50%;
   text-decoration: none;
   transition: all 0.3s ease;
+  color: var(--accent);
+  font-size: 1.2rem;
 }
 
 .social-link:hover {
   background: var(--accent);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
-.social-icon {
-  font-size: 1.2rem;
+.social-link i {
+  transition: color 0.3s ease;
 }
 
-.social-link:hover .social-icon {
-  filter: brightness(0) invert(1);
+/* Remove old emoji icon styles */
+.social-icon {
+  font-size: 1.2rem;
 }
 
 /* Responsive Author Box - only on mobile */
@@ -557,36 +561,6 @@ a:hover {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.6;
-}
-
-/* Connect Links */
-.connect-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.connect-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--accent);
-  color: white !important;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.connect-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  text-decoration: none;
-}
-
-.connect-link .icon {
-  font-size: 1.2rem;
 }
 
 /* =========================
