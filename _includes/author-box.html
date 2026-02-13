@@ -1,0 +1,31 @@
+<div class="author-box">
+  <div class="author-box-header">
+    About {{ site.author.name }}
+  </div>
+  <div class="author-box-body">
+    <div class="author-layout">
+      <div class="author-image">
+        <img src="/assets/images/profile.jpg" alt="{{ site.author.name }}" class="author-profile-img">
+      </div>
+      <div class="author-info">
+        <p class="author-bio">
+          Technology leader specializing in automation, SaaS integration, data platforms, and product development. 
+          Passionate about building scalable solutions that drive business value and empower teams through intelligent automation.
+        </p>
+        
+        <p class="author-website">
+          Website: <a href="{{ site.url }}" target="_blank" rel="noopener noreferrer">{{ site.url }}</a>
+        </p>
+        
+        <div class="author-social-links">
+          <a class="social-link" href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <span class="social-icon">💼</span>
+          </a>
+          <a class="social-link" href="{{ site.author.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <span class="social-icon">🔧</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
