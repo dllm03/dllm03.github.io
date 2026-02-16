@@ -66,11 +66,113 @@ a:hover {
   font-weight: 500;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 #theme-toggle {
   background: none;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+/* Mobile Menu Button (Hidden on desktop) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--text);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Hamburger animation when menu is open */
+.mobile-menu-btn.active .hamburger {
+  background: transparent;
+}
+
+.mobile-menu-btn.active .hamburger::before {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.mobile-menu-btn.active .hamburger::after {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Mobile Navigation (Hidden by default) */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  z-index: 99;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-nav.active {
+  max-height: 300px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 1rem 2rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: background 0.2s ease;
+}
+
+.mobile-nav a:hover {
+  background: var(--card);
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .mobile-nav {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .mobile-nav a {
+  border-bottom-color: rgba(255,255,255,0.05);
 }
 
 /* =========================
@@ -587,8 +689,19 @@ a:hover {
     padding: 1rem;
   }
 
+  /* Hide desktop navigation */
   .nav {
     display: none;
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Show mobile navigation */
+  .mobile-nav {
+    display: block;
   }
 
   .hero {

@@ -12,6 +12,35 @@
 
   <script>
     /* =========================
+       MOBILE MENU TOGGLE
+       ========================= */
+    const mobileMenuBtn = document.getElementById("mobile-menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+    
+    if (mobileMenuBtn && mobileNav) {
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenuBtn.classList.toggle("active");
+        mobileNav.classList.toggle("active");
+      });
+      
+      // Close menu when clicking a link
+      mobileNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenuBtn.classList.remove("active");
+          mobileNav.classList.remove("active");
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!mobileMenuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+          mobileMenuBtn.classList.remove("active");
+          mobileNav.classList.remove("active");
+        }
+      });
+    }
+
+    /* =========================
        DARK MODE TOGGLE
        ========================= */
     const toggle = document.getElementById("theme-toggle");
